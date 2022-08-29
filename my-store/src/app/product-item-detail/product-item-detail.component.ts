@@ -11,7 +11,7 @@ import { MyCartService } from '../service/my-cart.service';
 })
 export class ProductItemDetailComponent implements OnInit {
 selectedProduct:Product=new Product();
-selectedValue: any;
+selectedValue: any=1;
   constructor(private activatedRoute: ActivatedRoute,private allProductsService:AllProductsService,private cart: MyCartService) { 
     this.selectedProduct={
       id:0,

@@ -9,7 +9,7 @@ import { MyCartService } from '../service/my-cart.service';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product:Product;
-  selectedValue: any;
+  selectedValue: any=1;
   @Output() selectedProduct:EventEmitter<Product>=new EventEmitter;
   constructor(private cart: MyCartService) { 
     this.product={

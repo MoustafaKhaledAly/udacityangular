@@ -2,7 +2,7 @@
     <a  routerLink="/ProductItemDetailComponent/{{product.id}}"><img src={{product.url}} class="product-image"></a>
     <p>{{product.name}}</p>
     <p>${{product.price}}</p>
-    <select class="select-input" [(ngModel)]="selectedValue">
+    <select class="select-input" [(ngModel)]="selectedValue" [value]='1'>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

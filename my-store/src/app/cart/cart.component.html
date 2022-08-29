@@ -9,7 +9,7 @@
 <input type="text" name="title" required minlength="6" maxlength="32" placeholder="(Min 6 chars)" [(ngModel)]="address" (ngModelChange)="validateAddress()">
 <div *ngIf="addressError"><p>Address is not entered correctly</p></div>
 <p>Credit card number</p>
-<input type="text" name="title" required minlength="16" maxlength="16" placeholder="(16 Digits)" [(ngModel)]="credit" onkeypress="return onlyNumberKey(event)" (ngModelChange)="validateCard()" >
+<input type="text" name="title" required minlength="16" maxlength="16" placeholder="(16 Digits)" [(ngModel)]="credit" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" (ngModelChange)="validateCard()">
 <div *ngIf="cardError"><p>Card is not entered correctly</p></div>
 <button routerLink="ConfirmationComponent" (click)="setNameAndTotal()" type="submit" [disabled]="form.invalid"> submit</button>
 </form>
