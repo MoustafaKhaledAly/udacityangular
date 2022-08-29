@@ -37,6 +37,7 @@ selectedValue: any;
 
 
   addToCart(){
+    if(this.selectedValue){
     let newProduct:Product=new Product();
     newProduct.quantity=this.selectedValue;
     newProduct.id=this.selectedProduct.id;  
@@ -47,11 +48,10 @@ selectedValue: any;
 
 
       this.cart.addToMyCart(newProduct);
+  }
 
-
-    
+}
   }
 
   
 
-}

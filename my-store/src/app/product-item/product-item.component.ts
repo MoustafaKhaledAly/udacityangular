@@ -37,6 +37,7 @@ export class ProductItemComponent implements OnInit {
 
 
   addToCart(){
+    if(this.selectedValue){
     let newProduct:Product=new Product();
     newProduct.quantity=this.selectedValue;
     newProduct.id=this.product.id;  
@@ -48,7 +49,7 @@ export class ProductItemComponent implements OnInit {
 
       this.cart.addToMyCart(newProduct);
     
-   
+    }
     
   }
 

@@ -28,12 +28,14 @@ export class MyCartService {
   addToMyCart(product:Product):void{
     if(!this.isProductExistInCart(product)){
       this.productsList.push(product);
+      alert("added!");
     }else{
       const i = this.productsList.findIndex((ele:Product) => ele.id==product.id);
       if(product.quantity){
         console.log("product.quantity:"+(typeof product.quantity));
         console.log("list.quantity:"+this.productsList[i].quantity);
         this.productsList[i].quantity=  parseInt(this.productsList[i].quantity+"") + parseInt(product.quantity+"");
+        alert("added!");
       }
     
     }
@@ -48,6 +50,23 @@ if(productFound){
   return false;
 }
 }
+
+
+
+
+removeFromMyCart(product:Product):void{
+  if(this.isProductExistInCart(product)){
+    this.productsList=this.productsList.filter(ele =>  ele.id!=product.id);
+    alert("removed");
+  }
+
+}
+
+
+
+
+
+
 
 setName(newName:string){
   this.name=newName;

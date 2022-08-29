@@ -1,13 +1,15 @@
-<app-cart-item *ngFor="let product of products" [product]="product"></app-cart-item>
+<app-cart-item *ngFor="let product of products  " [product]="product"  (removedItemFromCart)="removedItemFromCart($event)"></app-cart-item>
 <p>Total is :${{total}}</p>
 
 <form #form="ngForm">
 <p>Full Name</p>
-<input type="text" name="title" required minlength="3" maxlength="32" placeholder="(Min 3 chars)" [(ngModel)]="name">
+<input type="text" name="title" required minlength="3" maxlength="32" placeholder="(Min 3 chars)" [(ngModel)]="name" (ngModelChange)="validateName()">
+<div *ngIf="nameError"><p>Name is not entered correctly</p></div>
 <p>Address</p>
-<input type="text" name="title" required minlength="6" maxlength="32" placeholder="(Min 6 chars)" [(ngModel)]="address">
-
+<input type="text" name="title" required minlength="6" maxlength="32" placeholder="(Min 6 chars)" [(ngModel)]="address" (ngModelChange)="validateAddress()">
+<div *ngIf="addressError"><p>Address is not entered correctly</p></div>
 <p>Credit card number</p>
-<input type="text" name="title" required minlength="16" maxlength="16" placeholder="(16 Digits)" [(ngModel)]="credit">
+<input type="text" name="title" required minlength="16" maxlength="16" placeholder="(16 Digits)" [(ngModel)]="credit" onkeypress="return onlyNumberKey(event)" (ngModelChange)="validateCard()" >
+<div *ngIf="cardError"><p>Card is not entered correctly</p></div>
 <button routerLink="ConfirmationComponent" (click)="setNameAndTotal()" type="submit" [disabled]="form.invalid"> submit</button>
 </form>
