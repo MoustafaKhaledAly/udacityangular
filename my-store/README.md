@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
 
+## Project Description
+
+This project is developed to as a storefront UI for the user to select and build a purchase cart.The project consists of the pages
+-product list page
+-product detail page
+-cart page
+-confirmation page
+
+## Usage
+
+All the features that are implemented in this project work across modern environments.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
