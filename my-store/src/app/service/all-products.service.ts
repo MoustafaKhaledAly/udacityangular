@@ -9,10 +9,6 @@ export class AllProductsService {
   productsList:Product[]=[];
   constructor(private http:HttpClient) { }
 
-    //  getProducts():Observable<Product[]>{  
-    //   return this.http.get<Product[]>('./assets/data.json');
-    // }
-
      getProducts():Product[]{  
 
       this.http.get<Product[]>('./assets/data.json').subscribe(res =>{

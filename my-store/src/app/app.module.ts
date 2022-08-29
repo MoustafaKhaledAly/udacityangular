@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProductItemDetailComponent } from './product-item-detail/product-item-detail.component';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { ProductItemDetailComponent } from './product-item-detail/product-item-d
     ProductItemComponent,
     NavBarComponent,
     ProductItemDetailComponent,
+    CartComponent,
+    CartItemComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

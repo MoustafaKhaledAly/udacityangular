@@ -2,7 +2,8 @@
     <img src={{selectedProduct.url}} class="product-image">
     <p>{{selectedProduct.name}}</p>
     <p>{{selectedProduct.price}}</p>
-    <select class="select-input">
+    <p>{{selectedProduct.description}}</p>
+    <select class="select-input"  [(ngModel)]="selectedValue">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -13,6 +14,6 @@
         <option value="8">8</option>
         <option value="9">9</option>
       </select>
-    <button>Add to Cart</button> 
+    <button (click)="addToCart()">Add to Cart</button> 
     <a routerLink="/">back to product list</a>
 </div>
